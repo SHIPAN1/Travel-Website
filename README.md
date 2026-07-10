@@ -209,3 +209,233 @@ placeholder="To">
 
 </body>
 </html>
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    color:#333;
+}
+
+/* Header */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:rgba(0,0,0,.35);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.logo{
+    color:#fff;
+    font-size:28px;
+    font-weight:700;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin:0 15px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00b4ff;
+}
+
+.login-btn{
+    padding:10px 22px;
+    border:none;
+    border-radius:30px;
+    background:#00b4ff;
+    color:#fff;
+    cursor:pointer;
+}
+
+/* Hero */
+.hero{
+    height:100vh;
+    background:url("images/hero.jpg") center/cover no-repeat;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+}
+
+.content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    color:white;
+    width:90%;
+}
+
+.content h1{
+    font-size:70px;
+    margin-bottom:20px;
+}
+
+.content p{
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+/* Search */
+.search-box{
+    display:flex;
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    border-radius:50px;
+    overflow:hidden;
+}
+
+.search-box input{
+    flex:1;
+    padding:18px;
+    border:none;
+    outline:none;
+}
+
+.search-box button{
+    background:#00b4ff;
+    color:white;
+    border:none;
+    padding:18px 35px;
+    cursor:pointer;
+}
+
+/* Feature Cards */
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:50px;
+}
+
+.card{
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(12px);
+    padding:30px;
+    border-radius:20px;
+    color:white;
+}
+
+.card i{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+/* Sections */
+section{
+    padding:80px 8%;
+}
+
+.place-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.place{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.place img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+}
+
+.place h3{
+    padding:15px;
+}
+
+.place p{
+    padding:0 15px 20px;
+}
+
+.hotel-card{
+    display:flex;
+    gap:20px;
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 8px 18px rgba(0,0,0,.1);
+}
+
+.hotel-card img{
+    width:220px;
+    border-radius:15px;
+}
+
+.travel-time input{
+    width:250px;
+    padding:15px;
+    margin:10px;
+}
+
+.travel-time button{
+    padding:15px 30px;
+    background:#00b4ff;
+    color:white;
+    border:none;
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+/* Mobile */
+@media(max-width:900px){
+
+.content h1{
+    font-size:45px;
+}
+
+.features{
+    grid-template-columns:1fr 1fr;
+}
+
+.place-grid{
+    grid-template-columns:1fr;
+}
+
+.hotel-card{
+    flex-direction:column;
+}
+
+.search-box{
+    flex-direction:column;
+    border-radius:20px;
+}
+
+.search-box button{
+    width:100%;
+}
+
+}
