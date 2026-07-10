@@ -439,3 +439,128 @@ footer{
 }
 
 }
+// ===============================
+// Travel Adventure Website
+// script.js
+// ===============================
+
+// Welcome Message
+window.addEventListener("load", () => {
+    console.log("Welcome to Travel Adventure!");
+});
+
+// Search Destination
+const searchBtn = document.querySelector(".search-box button");
+const searchInput = document.querySelector(".search-box input");
+
+if (searchBtn && searchInput) {
+    searchBtn.addEventListener("click", () => {
+
+        let destination = searchInput.value.trim();
+
+        if (destination === "") {
+            alert("Please enter a destination.");
+        } else {
+            alert("Searching for: " + destination);
+        }
+
+    });
+}
+
+// Dark Mode
+const darkButton = document.createElement("button");
+
+darkButton.innerHTML = "🌙";
+
+darkButton.style.position = "fixed";
+darkButton.style.right = "20px";
+darkButton.style.bottom = "20px";
+darkButton.style.width = "55px";
+darkButton.style.height = "55px";
+darkButton.style.borderRadius = "50%";
+darkButton.style.border = "none";
+darkButton.style.cursor = "pointer";
+darkButton.style.fontSize = "22px";
+darkButton.style.background = "#0099ff";
+darkButton.style.color = "#fff";
+
+document.body.appendChild(darkButton);
+
+darkButton.addEventListener("click", () => {
+
+    document.body.classList.toggle("dark-mode");
+
+});
+
+// Scroll Animation
+const cards = document.querySelectorAll(".card, .place");
+
+window.addEventListener("scroll", () => {
+
+    cards.forEach(card => {
+
+        const position = card.getBoundingClientRect().top;
+
+        if (position < window.innerHeight - 100) {
+
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0px)";
+
+        }
+
+    });
+
+});
+
+// Initial Animation Style
+cards.forEach(card => {
+
+    card.style.opacity = "0";
+    card.style.transform = "translateY(40px)";
+    card.style.transition = "0.6s";
+
+});
+
+// Travel Time Calculator
+const travelButton = document.querySelector(".travel-time button");
+
+if (travelButton) {
+
+travelButton.addEventListener("click", () => {
+
+const from = document.querySelectorAll(".travel-time input")[0].value;
+
+const to = document.querySelectorAll(".travel-time input")[1].value;
+
+if(from==="" || to===""){
+
+alert("Please enter both locations.");
+
+}else{
+
+alert(
+"Travel time calculation for:\n\n"
++ from + " ➜ " + to +
+"\n\nFeature will connect with Google Maps API later."
+);
+
+}
+
+});
+
+}
+
+// Wishlist
+const hearts = document.querySelectorAll(".place");
+
+hearts.forEach(place=>{
+
+place.addEventListener("click",()=>{
+
+place.style.border="3px solid #00bfff";
+
+alert("Added to Wishlist ❤️");
+
+});
+
+});
